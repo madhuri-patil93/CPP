@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+class student
+{
+private:
+        int rollno;
+        char name[20];
+        int marks[6];
+public:
+        void input()
+        {
+                int i;
+                cout << "Enter roll no." << endl;
+                cin >> rollno;
+                cout << "Enter Name" << endl;
+                cin >> name;
+                cout << "Enter Marks" << endl;
+                for (i=0;i<=5;i++)
+                {
+                cin >> marks[i];
+                }
+        }
+        char  getgrade()
+        {
+                int i,count=0;
+                char c;
+                for(i=0;i<=5;i++)
+                {		
+		 if(marks[i]<40)
+
+                                count++;
+
+                }
+                        if(count==0)
+                        {
+                                c=80;
+
+                               }
+                                else if(count<=4)
+                                {
+                                c=69;
+                                }
+                                else
+                                {
+                                c=70;
+                                }
+                return c;
+
+        }
+        void display()
+        {
+                cout <<"Roll no."<<rollno<<endl;
+                cout <<"Name "<<name<<endl;
+                cout <<"Grade"<<getgrade()<<endl;
+        }
+};
+int main()
+{
+student s1;
+s1.input();
+s1.getgrade();
+s1.display();
+return 0;
+}

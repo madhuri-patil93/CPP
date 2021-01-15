@@ -1,0 +1,2 @@
+Pass by value : giving you my resume to see , manipulate , check and etc but nothing will be reflected in my copy of resume..
+Pass by ref: giving you direct access of the  resume so your changes will be reflected to both of us.

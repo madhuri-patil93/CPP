@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+        char name[20],name2[20];
+        char ch;
+        int i;
+        int len;
+        cout<<"Input name";
+        i=0;
+        while((ch=cin.get())!='\n')
+        {
+                name[i++]=ch;
+        }
+        name[i]='\0';
+        i=0;
+        cout<<"Input name2:"<<endl;
+        while((ch=cin.get())!='\n')
+        name2[i++]=ch;
+        i=0;
+        while((name2[i]=name[i])!='\0')
+        i++;
+        len=i; 
+        name2[i]='\0';
+        cout<<"name is :"<<name<<endl;
+        cout<<"Copied string is "<<name2<<endl;
+        cout<<"Lenght of the string :"<<len<<endl;
+return 0;
+
+

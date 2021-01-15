@@ -1,0 +1,127 @@
+Q15:
+develop a class time having following data members
+	int hour
+	int minute
+	int second
+define 0 para contr
+	3 para contr
+overload the operator + to add specific seconds ao the time
+
+Eg:
+	if time is 13:5:30 add 40 sec new time will be 13:6:10
+overload the operator > to sate which time is greater
+[assume 24 hour clock]
+
+----------------------------------------------------------------------------------
+
+Q14:
+Develop a class supplier having following data members:
+	int suppno
+	char sname[20]
+define: 0 para contr
+	2 para contr(para names must be suppno,sname)
+define: show() : to display data members
+
+----------------------------------------------------------------------------------------
+
+Q13:
+read a string from the console using cin.get() [do not use cin.getline()]
+print the name 
+display the length of string
+copy that string to another char array without using <cstring>
+\n  :  new line
+\r  :  carriage return
+
+-------------------------------------------------------------------------------------------
+
+Q12:
+develop a student class having having folloing data members
+	int rollno
+	char nama[20]
+	int marks[6]
+define: 0 para contr
+	3 para contr
+define: intput() - to accept input from console
+	intput (3 para)
+	grade() func to return avg marks of the student
+
+develop a class research student derived from student having following data members 
+	int project weight
+	0 para contr
+	4 para contr
+define  : intput() - to accept input from console
+	intput (4 para)
+	override grade fun to return avg 
+considering project weight in addition to 6 subjects 
+define fun to return only projectweight
+define show() fun in appropriate class
+demonstrate the concept of 
+	upcasting
+	downcasting
+	polymorphism
+in main()
+all data members must be private
+
+------------------------------------------------------------------------------------------------------
+
+Q6:
+Develop a class student having following data members:
+	int rollno
+	char  ame[20]
+	int m1,m2
+define input fun to accept all the data members from the std i/p device
+defiene fun to return sum of marks
+define fun a rollno,name and total marks
+
+-----------------------------------------------------------------------------------
+
+Q11:
+override the fun getGross that will add the car-allowance to the gross salary computed in base class and return te new gross salary 
+test the concept of upcasting ,fun overriding & polymorphism in main()
+
+-----------------------------------------------------------------------------------------------
+
+Q4:
+Develop a class customer having following data members:
+	int cid
+	char cname
+	double creditlimit
+define inpu fun to accept the data members valuesfrom std i/p device 
+define show fun to o/p
+
+--------------------------------------------------------------------------------------------------------------
+
+Q5:
+Develop a class student having following data members:
+	int rollno
+	char cname[20];
+	marks in 6 sub;
+define appropriate i/p & o/p prog
+
+-------------------------------------------------------------------------------------------------
+
+Q10
+Develop a class employee having following data members: 
+	int empno;
+	char ename[20];
+	double basic;
+define 
+	0 para constr(initialize basic salary to 20000)
+	3 para constr
+define fun
+	double getGross()
+	to return gross salary of the epmployee based on following:
+		da(dearness allowance) = 125%of basic (1.5*b)
+		hra=10% of(basic + da) (0.1*(basic+da)) or 8000 which ever is less
+		gross = basic + da +hra
+
+Develop a class manager having following data members:
+	double car_allowence;
+define :
+	0 para(initialize car_allowence to 5000)
+	4 para 
+define a fun new_gross salary() that will add the car_allowance to the gross salary computed in base class and return the new gross salary
+
+-------------------------------------------------------------------------------------------------------------
+
+Q9:

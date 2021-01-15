@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+                char name[40];
+                char name2[20];
+                int i,len1=0,len2=0,j=0;
+                cout<<"Enter any string 1"<<endl;
+                cin.get(name,40);
+                for(i=0;name[i]!='\0';i++)
+                {
+                        len1++;
+                }
+                cout<<"Enter Any String 2";
+                cin.get();
+                cin.get(name2,20);
+                cin.get();
+                for(i=0;name2[i]!='\0';i++)
+                {
+                        len2++;
+                }
+                j=len1;
+                for(i=0;i<=len2;i++)
+                {
+                        name[j++] = name2[i];
+                }
+                name[j]='\0';
+                cout<<"Concatinated String "<<endl;
+                cout<<name<<endl;
+                cout<<len1<<endl;
+                cout<<name2<<endl;
+                cout<<len2;
+                return 0;
+}

@@ -1,0 +1,35 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class Supplier
+{
+private:
+        int suppno;
+        char sname[20];
+public:
+        Supplier()
+        {
+        suppno=0;
+        sname[0]='\0';
+        }
+        Supplier(int suppno,const char sname[])
+        {
+        this->suppno=suppno;
+        strcpy(this->sname,sname);
+        }
+
+        void show()
+        {
+        cout<<"supplier no. = "<<this->suppno<<endl;
+        cout<<"Name = "<<this->sname<<endl;
+        }
+};
+
+int main()
+{
+Supplier s1(145,"sushant");
+s1.show();
+Supplier s2(144,"sush");
+s2.show();
+return 0;
+}

@@ -1,0 +1,94 @@
+#include<iostream>
+using namespace std;
+class Add
+{
+        private:
+                int a,b,c;
+                double x,y,z;
+        public:
+                int sum(int p,int q)
+                {
+                        a=p;
+                        b=q;
+                        return a+b;
+                }
+                int sum(int p,int q,int r)
+                {
+                        a=p;
+                        b=q;
+                        c=r;
+                        return a+b+c;
+                }
+                int sum(int *p)
+                {
+                        int i,t;
+                        t=p[0];
+                        for(i=0;i<4;i++)
+                        {
+                                t=t+p[i];
+                        }
+                        return t;
+                }
+                double sum(double p,double q)
+                {
+                        y=p;
+                        z=q;
+                        return y+z;
+                }
+                double sum(double p,double q,double r)
+                {
+                        x=p;
+                        y=q;
+                        z=r;
+                        return x+y+z;
+                }
+                double sum(double *p)
+                {
+                        int i;
+                        double t;
+                        t=p[0];
+                        for(i=0;i<4;i++)
+                        {
+                                t=t+p[i];
+                        }
+                        return t;
+                }
+
+};
+int main()
+{
+Add a1;
+int a,b,c,d[5],i;
+double x,y,z,w[5];
+int *ptr;
+double *ptrd;
+
+cout<<"Enter two Integer "<<endl;
+cin>>a>>b;
+cout<<"Sum = "<<a1.sum(a,b)<<endl<<endl;
+
+cout<<"Enter three Integer"<<endl;
+cin>>a>>b>>c;
+cout<<"Sum = "<<a1.sum(a,b,c)<<endl<<endl;
+
+cout<<"Enter Array of 5 Integer"<<endl;
+for(i=0;i<5;i++)
+cin>>d[i];
+
+ptr= d;
+cout<<"Sum = "<<a1.sum(ptr)<<endl<<endl;;
+
+cout<<"Enter two double Values"<<endl;
+cin>>z>>y;
+cout<<"Sum = "<<a1.sum(z,y)<<endl<<endl;
+
+cout<<"Enter Array of 5 Double Values"<<endl;
+for(i=0;i<5;i++)
+cin>>w[i];
+
+ptrd=w;
+cout<<"Sum = "<<a1.sum(ptrd)<<endl<<endl;
+
+return 0;
+}
+               

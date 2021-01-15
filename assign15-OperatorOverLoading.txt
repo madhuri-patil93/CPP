@@ -1,0 +1,88 @@
+#include<iostream>
+using namespace std;
+class Time
+{
+private:
+        int hour;
+        int minute;
+        int second;
+public:
+        Time()
+        {
+        hour=0;
+        minute=0;
+        second=0;
+        }
+        Time(int a,int b,int c)
+        {
+        hour=a;
+        minute=b;
+        second=c;
+        }
+        Time operator +(int T)
+        {
+                Time temp;
+                int i;
+                temp.hour=hour;
+                temp.minute=minute;
+                temp.second=second + T;
+		 if(temp.second>60)
+                {
+                        for(i=0;temp.second>60;i++)
+                        {
+                        temp.second-=60;
+                        temp.minute++;
+                        }
+                }
+                if(temp.minute>60)
+                {
+                        for(i=0;temp.minute>60;i++)
+                        {
+                        temp.minute-=60;
+                        temp.hour++;
+                        }
+                }
+
+                return temp;
+        }
+        int operator > (Time t)
+        {
+        Time temp;
+        if(temp.hour>hour)
+        {
+                cout<<"t3 time is greater"<<endl;
+        }
+        else if (temp.minute>minute)
+        {cout<<"t3 time greater"<<endl;
+        }
+        else if(temp.second>second)
+        {
+                cout<<"t3 is greater"<<endl;
+        }
+
+        return 0;
+        }
+        void show()
+        {
+        cout<<"Hour Minute Second"<<endl;
+        cout<<hour<<":"<<minute<<":"<<second;
+        cout<<endl<<endl;
+        }
+};
+
+int main()
+{
+Time t1(13,5,30),t2(13,6,40),t3,t4;
+t3=t1+120;
+t3.show();
+if(t3>t1)
+{
+
+cout<<"t3 is greater";
+}
+else
+{
+cout<<"t1 is greater";
+}
+cout<<endl;
+return 0;

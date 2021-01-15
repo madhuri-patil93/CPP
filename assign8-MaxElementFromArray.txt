@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+
+
+        int getmax(int *n)
+        {
+                int max=n[0],i;
+                for(i=1;i<=5;i++)
+                { 
+                        if(max<n[i])
+                        
+                        max=n[i];
+                }       
+                return max;
+                
+        }    
+      
+int main()
+{
+int arr[5]={90,6,15,7,9}; 
+getmax(arr);
+cout<<"Maximum number is = "<<getmax(arr)<<endl;
+return 0;
+}   

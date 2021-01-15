@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+class Student
+{
+private:
+int rollno;
+char name[20];
+int marks[6];
+public:
+void input()
+{
+int i;
+cout<<"Enter Roll Number"<<endl;
+cin>>rollno;
+cout<<"Enter Name"<<endl;
+cin>>name;
+cout<<"Enter Marks of Five Subject"<<endl;
+for(i=0;i<5;i++)
+cin>>marks[i];
+}
+char grade()
+{
+int i,k=0;
+for(i=0;i<5;i++)
+{
+if(marks[i]<40)
+k++;
+}
+if(k>4)
+return 'F';
+if(k>=1&&k<=3)
+return 'E';
+else
+return 'P';
+}
+void output()
+{
+cout<<"Roll Number ="<<rollno<<endl;
+cout<<"Name        ="<<name<<endl;
+cout<<"Grade       ="<<grade()<<endl;
+}
+};
+int main()
+{
+Student s1;
+s1.input();
+s1.output();
+return 0;
+}
+

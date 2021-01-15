@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int pow(int p,int a)
+{
+        if (a!=0)
+        {
+                return a=p*pow(p,a-1);
+        }
+        else
+        {
+                        return 1;
+        }
+}
+int main()
+{
+        int a,b,c;
+        cout<<"Enter base"<<endl;
+        cin>>a;
+        cout<<"Enter Power"<<endl;
+        cin>>b;
+        c=pow(a,b);
+        cout<<"Result = "<<c<<endl;
+        return 0;
+}

@@ -1,0 +1,134 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class Student
+{
+private:
+        int rollno;
+        char name[20];
+        int marks[6];
+public:
+        Student()
+        {
+                rollno=0;
+                name[0]='\0';
+                marks[0]=0;
+        }
+        Student(int r,const char n[],int m[])
+        {
+                int i;
+                rollno=r;
+                strcpy(name,n);
+                //cout<<"Enter marks"<<endl;
+                //for(i=0;i<=5;i++)
+                //cin>>marks[i];
+                //marks[i]=m[i];
+        }
+        virtual void input()
+        {
+	 int i;
+                cout<<"Enter roll no = "<<endl;
+                cin>>rollno;
+                cout<<"Enter Name = "<<endl;
+                cin>>name;
+                /*cout<<"Enter Marks = "<<endl;
+                for(i=0;i<=5;i++)
+                {
+                        cin>>marks[i];
+                }*/
+        }
+        virtual float grade()
+        {
+                float avg;
+                int i,sum=0;
+                for(i=0;i<=5;i++)
+                {
+                        sum=sum+marks[i];
+                }
+                avg=sum/i;
+                return avg;
+        }
+        virtual void show()
+        {
+                int i;
+                cout<<"Roll No = "<<rollno<<endl;
+                cout<<"Name = "<<name<<endl;
+                cout<<"<Marks = "<<endl;
+		for(i=0;i<=5;i++)
+                {
+                cin>>marks[i];
+                }
+                cout<<"Average = "<<grade()<<endl;
+        }
+        void print()
+        {
+        cout<<"In base class"<<endl;
+        }
+};
+
+class Research : public Student
+{
+private:
+        int projectweight;
+public:
+        Research()
+        {
+                projectweight=0;
+        }
+        Research(int r,const char n[],int m[],int pw): Student(r,n,m)
+        {
+                projectweight=pw;
+        }
+        float grade()
+        {
+                float s,avg;
+		s=Student::grade();
+                avg=(((s*6)+projectweight)/7);
+                return avg;
+        }
+        /*int accept()
+        {
+                cin>>projectweight;
+                return projectweight;
+        }*/
+        void show()
+        {
+                Student::show();
+                cout<<"projectweight = "<<projectweight<<endl;
+        }
+        void print()
+        {
+        cout<<"derived class"<<endl;
+        }
+};
+int main()
+{
+Student s1;
+s1.input();
+s1.grade();
+s1.show();
+cout<<endl<<endl;
+
+int i,arr[]={};
+Student s2(145,"Sushant",arr);
+//s2.grade();
+s2.show();
+s2.grade();
+cout<<endl<<endl;
+
+//Upcasting
+Student *r1;
+r1= new Research(144,"Anwar",arr,90);
+r1->grade();
+r1->show();
+r1->print();
+
+//Downcasting
+Research *r2;
+r2=(Research*)r1;
+r2->grade();
+r2->show();
+r2->print();
+return 0;
+}
+

@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+class customer
+{
+private:
+        int custid;
+        char cname[20];
+        double creditlimit;
+public: 
+        void input()
+        {
+        cout<<"Enter custid"<<endl;
+        cin>>custid;
+        cout<<"Enter Customer name"<<endl;
+        cin>>cname;
+        cout<<"Enter limit"<<endl;
+        cin>>creditlimit;
+        }
+        void show() 
+        {
+        cout<<"Customer id= "<<custid<<endl;
+        cout<<"Name = "<<cname<<endl;
+        cout<<"Creditlimit="<<creditlimit<<endl;
+        }
+};  
+int main()
+{
+customer s1;
+s1.input();
+s1.show();
+return 0;
+}

@@ -1,0 +1,86 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class Employee
+{
+private:
+        int empno;
+        char name[20];
+        double basic;
+public:
+        Employee()
+        {
+                basic=20000;
+	        }
+        Employee(int a,char n[],double b)
+        {
+                empno=a;
+                strcpy(name,n);
+                basic=b;
+        }
+
+        double getgross()
+        {
+                double da;
+                double hra;
+                double gross;
+                da=1.25*basic;
+                cout<<"dearness allowance = "<<da<<endl;
+		hra=0.1*da;
+                //cout<<"Hosue rent allowance"<<hra<<endl;
+                if(hra>8000)
+                {
+                        hra=8000;
+                }
+                cout<<"House rent allowance = "<<hra<<endl;
+                gross=basic+da+hra;
+                return gross;
+        }
+        void show()
+        {
+        cout<<"Employee no.= "<<empno<<endl;
+        cout<<"Employee name = "<<name<<endl;
+        cout<<"Basic salary = "<<basic<<endl;
+        //cout<<"Dearness allowance ="<<da<<endl;
+        //cout<<"House rent allowance "<<hra<<endl;
+        cout<<"gross = "<<getgross()<<endl;
+        }
+
+};
+
+class Manager : public Employee
+{
+private:
+        double car_allowance;
+public:
+
+	 Manager()
+        {
+                car_allowance = 5000;
+        }
+        Manager(int p,char o[],double i,double k ) : Employee(p,o,i)
+        {
+        car_allowance=k;
+        }
+
+        double new_gross()
+        {
+        double  d,newgrosssalary;
+        d=getgross();
+        newgrosssalary=car_allowance+d;
+        return newgrosssalary;
+        }
+        void display()
+        {
+        cout<<"New gross salary= "<<new_gross()<<endl;
+        }
+};
+
+int main()
+{
+Employee e1(145,"sushant",20000);
+e1.show();
+Manager m1(144,"Anwar",60000,5000);
+m1.display();
+return  0;
+}

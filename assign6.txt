@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+class Student
+{
+private:
+        int roll;
+        char name[20];
+        int m1,m2;
+public:
+        Student(int x)
+        {
+         cin>>m2;
+        }
+        int total()
+        {
+        int sum;
+        sum=m1+m2;
+        return sum;
+        }
+        void show()
+        {
+        cout<<"Roll No."<<roll<<endl;
+        cout<<"Name"<<name<<endl;
+        cout<<"Subject1="<<m1<<endl;
+        cout<<"Subject2="<<m2<<endl;
+        cout<<"Total="<<total()<<endl;
+
+        }
+};
+int main()
+{
+Student s1(50);
+s1.input();
+s1.show();
+s1.total();
+return 0;
+}
+
+        }
+        Student()
+        {
+        }
+        void input()
+        {
+
+        cout<<"Name"<<endl;
+        cin>>name;
+        cout<<"m1"<<endl;
+        cin>>m1;
+        cout<<"m2"<<endl;

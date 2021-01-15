@@ -1,0 +1,88 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class employee
+{
+private:
+        int custid;
+        char cname[20];
+        int creditlimit;
+public:
+        // 0 parameter constructor
+        employee()
+        {
+        custid=0;
+        cname[20]='\0';
+        creditlimit=0;
+        }
+        // 2 parameter constructor
+        employee(int a,char b[])
+        {
+        custid=a;
+        strcpy(cname,b);
+        }
+        // 3 parameter constructor
+        employee(int a,char b[],int cl)
+        {
+        custid=a;
+        strcpy(cname,b);	
+	creditlimit=cl;
+        }
+        int limit()
+        {
+        int c;
+        if(creditlimit<20000)
+        {
+        c=1;
+        }
+        if(creditlimit>20000&&creditlimit<50000)
+        {
+        c=2;
+        }
+        if(creditlimit>50000&&creditlimit<100000)
+        {
+        c=4;
+        }
+        if(creditlimit>100000)
+        {
+        c=8;
+        }
+        return c;
+        }
+        void show()
+        {
+        cout<<"customer detils"<<endl;
+        cout<<"Customer id="<<custid<<endl;
+        cout<<"Name="<<cname<<endl<<endl;
+	cout<<"CreditLimit="<<limit()<<endl;
+
+        }
+        void input()
+        {
+        cout<<"Enter cust id="<<endl;
+        cin>>custid;
+        cout<<"Enter name="<<endl;
+        cin>>cname;
+        cout<<"Enter credit limit="<<endl;
+        cin>>creditlimit;
+
+
+        }
+
+};
+int main()
+{
+cout<<"0 parameter"<<endl<<endl;
+employee s1;
+s1.input();
+s1.show();
+cout<<"2 parameter "<<endl<<endl;
+employee s2(145,"sushant");
+s2.input();
+s2.show();
+cout<<"3 parameter"<<endl;
+employee s3(145,"sushant",500000);
+s3.show();
+return 0;
+}
+
